@@ -5,6 +5,8 @@ import lombok.*;
 
 import java.time.LocalDate;
 
+import java.util.List;
+
 @Entity
 @Table(name = "maintenance")
 @Getter
@@ -24,4 +26,7 @@ public class Maintenance {
 
     @Column(length = 255)
     private String description;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Vehicule vehicule;
+
 }
