@@ -1,5 +1,6 @@
 package tn.esprit.yasminehajji4emecce11.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -42,6 +43,7 @@ public class Vehicule {
     private StatutVehicule statut;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     private Agence agence;
 
     @ManyToMany(fetch = FetchType.LAZY)
